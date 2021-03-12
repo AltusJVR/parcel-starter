@@ -1,11 +1,14 @@
 @use 'vars' as vars;
 
-*,*::before,*::after {
+*,*::before,*::after{
+
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
+
+body{
   background-color: vars.$clr;
 }
+
