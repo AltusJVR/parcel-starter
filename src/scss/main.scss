@@ -1,14 +1,14 @@
-@use 'vars' as vars;
+@use 'base/reset';
+@use 'base/typo';
+@use 'base/mixins' as mixins;
+@use 'abstracts/colors';
+@use 'abstracts/fonts' as fonts;
 
-*,*::before,*::after{
 
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+body {
+  @include mixins.fonts(fonts.$esteban, fonts.$n-font-weight, "regular");
 }
 
-
-body{
-  background-color: vars.$clr;
+h1,h2,h3,h4,h5,h6 {
+  @include mixins.fonts(fonts.$oswald-esteban, fonts.$l-font-weight, "light");
 }
-

@@ -1,0 +1,22 @@
+@use '../abstracts/fonts' as fonts;
+@use '../abstracts/colors' as colors;
+
+@mixin headings {
+  
+}
+
+@mixin fonts ($family, $map, $key) {
+  font-family: $family;
+  font-weight: map-get($map: $map, $key: $key)
+}
+
+// @mixin changeFonts($h-fam, $h-weight:#{$map $key}, $body-fam, $body-weight:#{$map $key}) {
+//   h1,h2,h3,h4,h5,h6 {
+//     font-family: $headingfont;
+//     font-weight: #{$h-weight map.get( $map, $key)};
+//   }
+//   body {
+//     font-family: $body-fam;
+//     font-weight: #{$body-weight map.get( $map, $key)};
+//   }
+// }
