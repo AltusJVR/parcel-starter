@@ -1,0 +1,13 @@
+@use '../abstracts/fonts';
+@use '../abstracts/colors';
+
+
+// Set heading and body font pairs with a map
+@each $heading, $value in fonts.$estaban-map{
+  #{body}{
+    font-family: $value;
+  }.#{$heading}{
+    font-family: $value;
+    // font-weight: $heading-w#{$value};
+  }
+}

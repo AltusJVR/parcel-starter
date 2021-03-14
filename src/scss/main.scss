@@ -4,14 +4,14 @@
 @use 'abstracts/colors';
 @use 'abstracts/fonts' as fonts;
 
-// Set heading and body font pairs with a map
-@each $heading, $value in fonts.$dosis-map {
-  #{body}{
-    font-family: $value;
-  }.#{$heading}{
-    font-family: $value;
-  }
-}
+// Set heading and body font pairs with
+// @each $heading, $value in $map {
+//   #{body}{
+//     font-family: $value;
+//   }.#{$heading}{
+//     font-family: $value;
+//   }
+// }
 
 
 

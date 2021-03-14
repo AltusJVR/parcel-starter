@@ -125,11 +125,11 @@ $esteban: 'Esteban', serif;
 
 $estaban-map:(
   heading:$oswald,
-  body:$esteban
+  body:$esteban, 
+  // heading-w:300,
 );
 
 $l-font-weight:("thin": 100, "x-light": 200, "light":300);
 $n-font-weight:("regular":400,"medium":500,"semi-bold":600);
 $b-font-weight:("bold":700,"x-bold":800,"black":900);
 
-// $h-fonts:()
