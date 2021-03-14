@@ -35,49 +35,101 @@
 /* Google Esteban - all weights */
 @import url('https://fonts.googleapis.com/css2?family=Esteban&display=swap');
 
+
+
 /* 1 - H = Playfair Display, T = Raleway */
 $playfair-display: 'Playfair Display', serif;
 $raleway: 'Raleway', sans-serif;
+
+$playfair-map:(
+  heading:$playfair-display, 
+  body:$raleway
+  );
+
 
 /* 1 - H = Roboto Bold, T = Lora Regular */
 $roboto: 'Roboto', sans-serif;
 $lora: 'Lora', serif;
 
+$lora-map:(
+  heading:$roboto,
+  body:$lora
+  );
+
 /* 1 - H = Oxygen Light, T = Noto Serif Regular */
 $oxygen: 'Oxygen', sans-serif;
 $noto-serif: 'Noto Serif', serif;
+
+$oxygen-map:(
+  heading:$oxygen,
+  body:$noto-serif
+);
 
 /* 1 - H = Arvo Regular, T = Lato Regular */
 $arvo: 'Arvo', serif;
 $lato: 'Lato', sans-serif;
 
+$arvo-map:(
+  heading:$arvo,
+  body:$lato
+);
+
 /* 1 - H = Work Sans Light, T = Open Sans Regular */
 $work-sans:'Work Sans', sans-serif;
 $open-sans:'Open Sans', sans-serif;
+
+$works-sans-map:(
+  heading:$work-sans,
+  body:$open-sans
+);
 
 /* 1 - H = Oswald Regular, T = Quattrocento Regular */
 $oswald:'Oswald', sans-serif;
 $quattrocento: 'Quattrocento', serif;
 
+$oswald-map:(
+  heading:$oswald,
+  body:$quattrocento
+);
+
 /* 1 - H = Unica one, T = Crimson Text */
 $unica-one:'Unica One', cursive;
 $crimson-text: 'Crimson Text', serif;
 
+$oswald-map:(
+  heading:$unica-one,
+  body:$crimson-text
+);
+
 /* 1 - H = Vollkorn regular Italic, T = Raleway Medium */
 $vollkorn: 'Vollkorn', serif;
-$vollkorn-raleway: $raleway;
+// $vollkorn-raleway: $raleway;
+
+$vollkorn-map:(
+  heading:$vollkorn,
+  body:$raleway
+);
 
 /* 1 - H = Dosis Regular, T =  Titillium web regular */
 $dosis: 'Dosis', sans-serif;
 $tittilium: 'Titillium Web', sans-serif;
 
+$dosis-map:(
+  heading:$dosis,
+  body:$tittilium
+);
+
 /* 1 - H = Oswald Light, T =  Esteban Regular */
-$oswald-esteban: $oswald;
+// $oswald-esteban: $oswald;
 $esteban: 'Esteban', serif;
+
+$estaban-map:(
+  heading:$oswald,
+  body:$esteban
+);
 
 $l-font-weight:("thin": 100, "x-light": 200, "light":300);
 $n-font-weight:("regular":400,"medium":500,"semi-bold":600);
 $b-font-weight:("bold":700,"x-bold":800,"black":900);
-
 
 // $h-fonts:()

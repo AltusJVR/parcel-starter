@@ -4,11 +4,18 @@
 @use 'abstracts/colors';
 @use 'abstracts/fonts' as fonts;
 
-
-body {
-  @include mixins.fonts(fonts.$esteban, fonts.$n-font-weight, "regular");
+// Set heading and body font pairs with a map
+@each $heading, $value in fonts.$dosis-map {
+  #{body}{
+    font-family: $value;
+  }.#{$heading}{
+    font-family: $value;
+  }
 }
 
-h1,h2,h3,h4,h5,h6 {
-  @include mixins.fonts(fonts.$oswald-esteban, fonts.$l-font-weight, "light");
-}
+
+
+
+
+
+    
