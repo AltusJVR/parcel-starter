@@ -2,20 +2,10 @@
 @use 'base/typo';
 @use 'base/mixins' as mixins;
 @use 'abstracts/colors';
-@use 'abstracts/fonts' as fonts;
-
-// Set heading and body font pairs with
-// @each $heading, $value in $map {
-//   #{body}{
-//     font-family: $value;
-//   }.#{$heading}{
-//     font-family: $value;
-//   }
-// }
+@use 'layout/container';
+@use 'components/navbar';
 
 
-
-
-
-
-    
+body {
+  overflow-x: hidden;
+}

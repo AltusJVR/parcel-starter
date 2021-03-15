@@ -1,135 +1,278 @@
-/* Google Font Playfair Display - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-/* Google Font Raleway - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-/* Google Font Roboto - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-/* Google Font Lora - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
-/* Google Font Oxygen - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
-/* Google Font Noto serif - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-/* Google Arvo - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-/* Google Lato - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap');
-/* Google Work Sans - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-/* Google Open Sans - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
-/* Google Oswald - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
-/* Google Quattrocento  - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap');
-/* Google Unica One - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
-/* Google Crimson - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
-/* Google Vollkorn - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-/* Google Dosis - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
-/* Google Titillium Web - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600&display=swap');
-/* Google Esteban - all weights */
-@import url('https://fonts.googleapis.com/css2?family=Esteban&display=swap');
+@use 'font-import';
+
+/* Map variables */
+$font-style: normal!default;
+$heading:('h1', 'h2', 'h3', 'h4', 'h5','h6');
 
 
+/* 
+Font-map layout: 
+===========================
+$font-map:(
+  heading: $headding-font,
+  h-w: 'heading-weight',
+  h-s: font-style,
+  body:$body-font,
+  body-weight: 'body-weight',
+  b-s: $body-style,
+  );
+===========================
+*/
 
+
+/* 
+1.1 Font Pairings Maps 
+===========================
+1 - H = Playfair Display, T = Raleway
+2 - H = Roboto Bold, T = Lora Regular
+3 - H = Oxygen Light, T = Noto Serif Regular
+4 - H = Arvo Regular, T = Lato Regular
+5 - H = Work Sans Light, T = Open Sans Regular
+6 - H = Oswald Regular, T = Quattrocento Regular
+7 - H = Unica one, T = Crimson Text
+8 - H = Vollkorn regular Italic, T = Raleway Medium
+9 - H = Dosis Regular, T =  Titillium web regular
+10 - H = Oswald Light, T =  Esteban Regular
+11 - H = Popins, T = Pt Serif 
+12 - H = Fira sans condensed, T = Taviraj 
+===========================
+2 Font Weights
+2.1 -  Font weight maps
+2.2 merge font weight maps
+===========================
+3 Font Sizes
+3.1 Heading Font Sizes
+===========================
+*/
+
+/* 1.1 Font pairing maps*/
 /* 1 - H = Playfair Display, T = Raleway */
 $playfair-display: 'Playfair Display', serif;
 $raleway: 'Raleway', sans-serif;
 
 $playfair-map:(
-  heading:$playfair-display, 
-  body:$raleway
+  heading: $playfair-display,
+  h-w: 'regular',
+  h-s: $font-style,
+  body:$raleway,
+  body-weight: 'regular',
+  b-s: $font-style,
   );
 
-
-/* 1 - H = Roboto Bold, T = Lora Regular */
+/* 2 - H = Roboto Bold, T = Lora Regular */
 $roboto: 'Roboto', sans-serif;
 $lora: 'Lora', serif;
 
 $lora-map:(
-  heading:$roboto,
-  body:$lora
+  heading: $roboto,
+  h-w: 'bold',
+  h-s: $font-style,
+  body:$lora,
+  body-weight: 'regular',
+  b-s: $font-style,
   );
 
-/* 1 - H = Oxygen Light, T = Noto Serif Regular */
+/* 3 - H = Oxygen Light, T = Noto Serif Regular */
 $oxygen: 'Oxygen', sans-serif;
 $noto-serif: 'Noto Serif', serif;
 
 $oxygen-map:(
-  heading:$oxygen,
-  body:$noto-serif
+  heading: $oxygen,
+  h-w: 'light',
+  h-s: $font-style,
+  body:$noto-serif,
+  body-weight: 'regular',
+  b-s: $font-style,
 );
 
-/* 1 - H = Arvo Regular, T = Lato Regular */
+/* 4 - H = Arvo Regular, T = Lato Regular */
 $arvo: 'Arvo', serif;
 $lato: 'Lato', sans-serif;
 
 $arvo-map:(
-  heading:$arvo,
-  body:$lato
+  heading: $arvo,
+  h-w: 'regular',
+  h-s: $font-style,
+  body:$lato,
+  body-weight: 'regular',
+  b-s: $font-style,
 );
 
-/* 1 - H = Work Sans Light, T = Open Sans Regular */
+/* 5 - H = Work Sans Light, T = Open Sans Regular */
 $work-sans:'Work Sans', sans-serif;
 $open-sans:'Open Sans', sans-serif;
 
-$works-sans-map:(
-  heading:$work-sans,
-  body:$open-sans
+$work-sans-map:(
+  heading: $work-sans,
+  h-w: 'light',
+  h-s: $font-style,
+  body:$open-sans,
+  body-weight: 'regular',
+  b-s: $font-style,
 );
 
-/* 1 - H = Oswald Regular, T = Quattrocento Regular */
+/* 6 - H = Oswald Regular, T = Quattrocento Regular */
 $oswald:'Oswald', sans-serif;
 $quattrocento: 'Quattrocento', serif;
 
 $oswald-map:(
-  heading:$oswald,
-  body:$quattrocento
+  heading: $oswald,
+  h-w: 'regular',
+  h-s: $font-style,
+  body: $quattrocento,
+  body-weight: 'regular',
+  b-s: $font-style,
 );
 
-/* 1 - H = Unica one, T = Crimson Text */
+/* 7 - H = Unica one, T = Crimson Text */
 $unica-one:'Unica One', cursive;
 $crimson-text: 'Crimson Text', serif;
 
-$oswald-map:(
-  heading:$unica-one,
-  body:$crimson-text
+$unica-map:(
+  heading: $unica-one,
+  h-w: 'regular',
+  h-s: $font-style,
+  body:$crimson-text,
+  body-weight: 'regular',
+  b-s: $font-style,
 );
 
-/* 1 - H = Vollkorn regular Italic, T = Raleway Medium */
+/* 8 - H = Vollkorn regular Italic, T = Raleway Medium */
 $vollkorn: 'Vollkorn', serif;
 // $vollkorn-raleway: $raleway;
 
 $vollkorn-map:(
-  heading:$vollkorn,
-  body:$raleway
+  heading: $vollkorn,
+  h-w: 'regular',
+  h-s: italic,
+  body:$raleway,
+  body-weight: 'medium',
+  b-s: $font-style,
 );
 
-/* 1 - H = Dosis Regular, T =  Titillium web regular */
+/* 9 - H = Dosis Regular, T =  Titillium web regular */
 $dosis: 'Dosis', sans-serif;
 $tittilium: 'Titillium Web', sans-serif;
 
 $dosis-map:(
-  heading:$dosis,
-  body:$tittilium
+  heading: $dosis,
+  h-w: 'regular',
+  h-s: $font-style,
+  body:$tittilium,
+  body-weight: 'regular',
+  b-s: $font-style,
 );
 
-/* 1 - H = Oswald Light, T =  Esteban Regular */
+/* 10 - H = Oswald Light, T =  Esteban Regular */
 // $oswald-esteban: $oswald;
 $esteban: 'Esteban', serif;
 
 $estaban-map:(
-  heading:$oswald,
-  body:$esteban, 
-  // heading-w:300,
+  heading: $oswald,
+  h-w: 'light',
+  h-s: $font-style,
+  body:$esteban,
+  body-weight: 'regular',
+  b-s: $font-style,
 );
 
-$l-font-weight:("thin": 100, "x-light": 200, "light":300);
-$n-font-weight:("regular":400,"medium":500,"semi-bold":600);
-$b-font-weight:("bold":700,"x-bold":800,"black":900);
+/* 11 - H = Popins, T = Pt Serif */
+$poppins: 'Poppins', sans-serif;
+$pt-serif: 'PT Serif', serif;
 
+$poppins-map:(
+  heading: $poppins,
+  h-w: 'light',
+  h-s: $font-style,
+  body:$pt-serif,
+  body-weight: 'regular',
+  b-s: normal,
+);
+
+/* 12 - H = Fira sans condensed, T = Taviraj */
+$fira-sans-condensed: 'Fira Sans Condensed', sans-serif;
+$taviraj: 'Taviraj', serif;
+
+$fira-sans-map:(
+  heading: $fira-sans-condensed,
+  h-w: 'medium',
+  h-s: $font-style,
+  body:$taviraj,
+  body-weight: 'regular',
+  b-s: $font-style,
+);
+
+/* Placeholders */
+/* 13 - H = Fira sans condensed, T = Taviraj */
+/* $fira-sans-condensed: 'Fira Sans Condensed', sans-serif;
+$taviraj: 'Taviraj', serif;
+
+$fira-sans-map:(
+  heading: $fira-sans-condensed,
+  h-w: 'semi-bold',
+  h-s: $font-style,
+  body:$taviraj,
+  body-weight: 'medium',
+  b-s: italic,
+); */
+
+/* 14 - H = Fira sans condensed, T = Taviraj */
+/* $fira-sans-condensed: 'Fira Sans Condensed', sans-serif;
+$taviraj: 'Taviraj', serif;
+
+$fira-sans-map:(
+  heading: $fira-sans-condensed,
+  h-w: 'semi-bold',
+  h-s: $font-style,
+  body:$taviraj,
+  body-weight: 'medium',
+  b-s: italic,
+); */
+
+/* 15 - H = Fira sans condensed, T = Taviraj */
+/* $fira-sans-condensed: 'Fira Sans Condensed', sans-serif;
+$taviraj: 'Taviraj', serif;
+
+$fira-sans-map:(
+  heading: $fira-sans-condensed,
+  h-w: 'semi-bold',
+  h-s: $font-style,
+  body:$taviraj,
+  body-weight: 'medium',
+  b-s: italic,
+); */
+
+/* Font Weights */
+/* 2.1 -  Font weight maps */
+
+$n-font-weight:(
+  'thin': 100,
+  'x-light': 200,
+  'light':300,
+  'regular':400,
+  'medium':500,
+  'semi-bold':600
+  );
+
+$b-font-weight:(
+  'bold':700,
+  'x-bold':800,
+  'black':900
+  );
+
+  
+/* 2.2 merge font weight maps */
+/* Merge normal font weights with bold font weights */
+$all-weights:map-merge($map1: $n-font-weight, $map2: $b-font-weight);
+
+
+/* 3 Font Sizes */
+/* 3.1 Heading Font Sizes */
+$heading-size:(
+  h1: 2.5em,
+  h2: 2.2em,
+  h3: 1.85em,
+  h4: 1.60em,
+  h5: 1.35em,
+  h6: 1.15em,
+);

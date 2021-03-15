@@ -1,13 +1,66 @@
 @use '../abstracts/fonts';
 @use '../abstracts/colors';
+@use 'sass:map';
 
+/* 
+Set the font family pairing 
+===========================
+!!!!! Use to change font family in any scss file
++++++++++++++++++++++++++++
+===========================
+*/
+$use-map: fonts.$fira-sans-map;
 
-// Set heading and body font pairs with a map
-@each $heading, $value in fonts.$estaban-map{
-  #{body}{
-    font-family: $value;
-  }.#{$heading}{
-    font-family: $value;
-    // font-weight: $heading-w#{$value};
+/* Set bg, highligh and font clr from color map */
+$bg-clr:map-get($map: colors.$gray-clr-map, $key: 30);
+$h-clr:map-get($map: colors.$blue-clr-map, $key: 50);
+$font-clr: map-get($map: colors.$gray-clr-map, $key: 80);
+
+/* extracts the font weight value from the all font weights map in _fonts */
+@function setFontWeight ($font-w) {
+  @if $font-w != null {
+    @return map-get($map: fonts.$all-weights, $key: $font-w);
+  }@else{
+    @error error
   }
+};
+
+/* Check what font weight is specified in the font map and assigns a weight value from a font weight map in _fonts */
+@function checkMapFontWeight( $map, $target){
+  $w:map-get($map: $map, $key: $target );
+  @if $w == null {
+    @return 'something went wrong';
+  }@if $w != null {
+    @return setFontWeight($w);
+  }
+};
+
+/* Set a font pairing map from fonts on the body */
+body {
+  font-family: map-get($map: $use-map, $key: body);
+  font-weight: checkMapFontWeight($use-map, body-weight);
+  font-style: map-get($map: $use-map, $key: #{b-s} );
+  background-color: $bg-clr;
+  color: $font-clr;
+}
+
+/* set a font for all headings from a font pairing map */
+@each $heading in fonts.$heading {
+  /* #{$heading} destrcutures $Heading map from _fonts */
+  #{$heading} {
+    font-family: map-get($map: $use-map, $key: heading);
+    font-weight: checkMapFontWeight($use-map, h-w );
+    font-style: map-get($map: $use-map, $key: #{h-s} );
+  }
+};
+
+@each $heading in fonts.$heading {
+  #{$heading}{
+    font-size: map-get($map: fonts.$heading-size, $key: $heading );
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

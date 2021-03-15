@@ -1,0 +1,35 @@
+
+@use '../base/typo';
+@use '../abstracts/colors';
+@use '../base/mixins' as mix;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 2px solid typo.$h-clr;
+  height: 10vh;
+  position: relative;
+}
+
+.navbar__links {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navbar__links a {
+  font-family: map-get($map: typo.$use-map, $key: heading );
+  font-size: 1.5em;
+  transition: transform ease-in;
+  border-bottom: 2px solid transparent;
+  transition-property: transform, border;
+  @include mix.transition;
+  &:hover, &:focus, &:focus-visible {
+    outline: none;
+    transform: scale(1.2);
+    border-bottom: 2px solid typo.$h-clr;
+    transform-origin: center;
+  }
+}

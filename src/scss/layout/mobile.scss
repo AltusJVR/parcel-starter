@@ -1,0 +1,99 @@
+@use '../base/typo';
+@use '../base/mixins' as mix;
+
+
+@media(max-width:678px){
+
+
+  .navbar__links {
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    transform: translateX(100%);
+    height: 90vh;
+    border-left: 2px solid typo.$h-clr;
+    transition: transform ease-in mix.$animation-time;
+    a {
+      width: 100%;
+      text-align: center;
+      border: none;
+      &:hover, &:focus, &:focus-visible {
+        transform: none;
+        border: none;
+      }
+    }
+
+
+  }
+  .burger {
+    // outline: 1px solid #fff;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .line{
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    transition: 
+    all ease-in mix.$animation-time;
+    transform-origin: center,
+    
+  }
+
+  .line-1{
+    position: absolute;
+    top: 20%;
+  }
+  .line-3{
+    position: absolute;
+    bottom: 20%;
+  }
+
+  .toggle {
+  align-items: center;
+  justify-content: center;
+  .line{
+    top: 50%;
+    bottom: 50%;
+  }
+  }
+
+.toggle .line-1{
+  transform: rotate(-45deg);  
+}
+.toggle .line-2{
+  opacity: 0;
+}
+.toggle .line-3{
+  transform: rotate(45deg) ;
+}
+
+
+@keyframes navLinkFade{
+  from{
+    opacity:0;
+    transform:
+    translateX(100%)}
+  to{
+    opacity:1;
+    transform:translateX(0)
+    }
+  }
+  .nav-active{
+    transform-origin: right;
+    transform: translateX(0);
+    right: 0;
+  }
+}

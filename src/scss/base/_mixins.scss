@@ -1,20 +1,16 @@
-@use '../abstracts/fonts' as fonts;
-@use '../abstracts/colors' as colors;
+$transition-map:(
+  fast: 150ms,
+  m-fast: 200ms,
+  medium: 250ms,
+  medium-s: 300ms,
+  slow: 350ms,
+);
 
-// @mixin headings {
-  
-// }
+$animation-time: map-get($map: $transition-map, $key: slow );
 
-@mixin fonts ($map) {
-  
+@mixin transition {
+  transition: map-get($map: $transition-map, $key: m-fast );
+  transition-timing-function: ease-in;
 }
 
 
-
-// @each $heading, $value in fonts.$playfair-map {
-//   #{body}{
-//     font-family: $value;
-//   }.#{$heading}{
-//     font-family: $value;
-//   }
-// }
