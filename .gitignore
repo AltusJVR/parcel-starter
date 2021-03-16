@@ -2,3 +2,5 @@
 /tmp
 .env
 notes.md
+# Local Netlify folder
+.netlify
