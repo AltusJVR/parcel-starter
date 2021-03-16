@@ -1,0 +1,35 @@
+@use '../base/typo';
+
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 10vh;
+}
+
+.footer__copyright {
+  font-size: 0.8em;
+}
+
+.footer__links {
+  margin-bottom: typo.$margin-b;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
+@media(max-width:678px){
+  .footer {
+    height: auto;
+  }
+  .footer__links{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    a+a {
+      margin-top: typo.$margin-b;
+    }
+  }
+}

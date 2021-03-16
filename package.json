@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/**/*.html --no-cache --port 8080 --out-dir tmp",
-    "build": "parcel build src/**/*.html --no-cache --no-source-maps --out-dir dist"
+    "dev": "parcel src/**/*.html --no-cache --port 8080 --out-dir tmp --no-source-maps",
+    "build": "parcel build src/**/*.html --no-cache --no-source-maps --out-dir dist --public-url ./dist/ "
   },
   "author": "Altus Janse Van Rensburg <albertusbjvr@gmail.com>",
   "license": "ISC",

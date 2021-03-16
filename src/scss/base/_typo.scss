@@ -15,8 +15,8 @@ $use-map: fonts.$fira-sans-map;
 $bg-clr: colors.$gray-9;
 $h-clr: colors.$blue-5;
 $font-clr: colors.$gray-1;
-$h-font-clr: colors.$blue-5;
-$overlay-clr: colors.$o-blue-6;
+$h-font-clr: colors.$blue-3;
+$overlay-clr: colors.$o-blue-8;
 $w-overlay-clr: colors.$o-white-3;
 $b-overlay-clr: colors.$o-black-3;
 
@@ -29,7 +29,7 @@ $margin-b:0.8em;
   @if $font-w != null {
     @return map-get($map: fonts.$all-weights, $key: $font-w);
   }@else{
-    @error error
+    @warn 'fontweight not found'
   }
 };
 

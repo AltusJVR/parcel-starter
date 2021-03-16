@@ -31,7 +31,10 @@
   right: 0;
   z-index: 20;
   background-color: typo.$bg-clr;
-  transition: background-color mix.$animation-time ease-in;
+  transition: 
+  background-color mix.$animation-time ease-in,
+  border-bottom mix.$animation-time ease-in,
+  color mix.$animation-time ease-in;
 }
 
 
@@ -64,6 +67,16 @@
 
 /* 3 Toggle Navbar Opacity */
 .navbar.navOpacity {
-  background-color: transparent;
-  border-bottom: none;
+  background-color: colors.$o-black-1;
+  border-bottom: 2px solid colors.$o-black-1;
+  /* Change the navbar logo to white when bg is transparent */
+  .navbar__logo{
+    h1 {
+      color:typo.$font-clr;
+    }
+  }
+  /* Change burger lines to white when bg is transparent */
+  .line {
+    background-color:typo.$font-clr;
+  }
 }

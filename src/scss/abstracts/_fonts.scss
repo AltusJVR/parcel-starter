@@ -12,8 +12,8 @@ $font-map:(
   heading: $headding-font,
   h-w: 'heading-weight',
   h-s: font-style,
-  body:$body-font,
-  body-weight: 'body-weight',
+  body: var,
+  body-weight: body-weight,
   b-s: $body-style,
   );
 ===========================

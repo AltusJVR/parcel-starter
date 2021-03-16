@@ -39,7 +39,6 @@ Navbar layout for mobile  (max-width:678px)
     transform: scaleX(0);
     height: 90vh;
     width: 100%;
-    border-left: 2px solid typo.$h-clr;
     transition: transform ease-in mix.$animation-time;
     background-color: typo.$overlay-clr;
 
@@ -57,6 +56,8 @@ Navbar layout for mobile  (max-width:678px)
       &:hover, &:focus, &:focus-visible {
         transform: none;
         border: none;
+        background-color:lighten(typo.$overlay-clr, $amount: 50%);
+        color: typo.$overlay-clr;
       }
     }
   }
@@ -78,7 +79,7 @@ Navbar layout for mobile  (max-width:678px)
   .line{
     height: 2px;
     width: 100%;
-    background-color: #fff;
+    background-color: typo.$h-clr;
     border-radius: 10px;
     position: absolute;
     transition: 
