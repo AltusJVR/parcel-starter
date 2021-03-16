@@ -5,4 +5,3 @@
 -  `npm run build` - build and minifies files into the dist folder.
  
 ----------
-
