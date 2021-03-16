@@ -1,8 +1,7 @@
 @use '../base/typo';
 @use '../abstracts/colors';
 
-$hero-image: url(../img/Valley-View-X3.jpg);
-$section-2-image: url(../img/section-1.jpg);
+
 .section {
   min-height: 100%;
   display: flex;
@@ -28,7 +27,7 @@ $section-2-image: url(../img/section-1.jpg);
 
   &::before {
     content: '';
-    background-image:$hero-image;
+    background-color: black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -80,7 +79,7 @@ $section-2-image: url(../img/section-1.jpg);
   /* Apply background image to before element helps to apply an overlay to the image so text is readable */
   &::before {
     content: '';
-    background-image:$section-2-image;
+    background-color: black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
