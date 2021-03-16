@@ -1,14 +1,14 @@
 {
-  "name": "parcel",
+  "name": "parcel-sass-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "- `npm run dev` - starts a dev server watches for file changes.\r -  `npm run build` - build and minifies files into the dist folder.",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/**/*.html --no-cache --port 8080 --out-dir tmp --no-source-maps",
-    "build": "parcel build src/**/*.html --no-cache --no-source-maps --out-dir dist --public-url ./dist/ "
+    "dev": "parcel src/**/*.html --no-cache --port 8080 --out-dir tmp",
+    "build": "parcel build src/**/*.html --no-cache --out-dir dist --public-url ./dist/ "
   },
   "author": "Altus Janse Van Rensburg <albertusbjvr@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "cssnano": "^4.1.10",
     "sass": "^1.32.8"
@@ -16,5 +16,21 @@
   "dependencies": {
     "netlify-cli": "^3.11.0",
     "parcel": "1.12.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AltusJVR/parcel-starter.git"
+  },
+  "keywords": [
+    "parcel starter",
+    "parcel sass starter",
+    "sass maps",
+    "sass maps with Google fonts",
+    "sass partials layout",
+    "Dart sass"
+  ],
+  "bugs": {
+    "url": "https://github.com/AltusJVR/parcel-starter/issues"
+  },
+  "homepage": "https://github.com/AltusJVR/parcel-starter#readme"
 }

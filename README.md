@@ -6,4 +6,3 @@
  
 ----------
 
-- Delete the dist and tmp folder before running build, as when running build again it contains the old css and js files.

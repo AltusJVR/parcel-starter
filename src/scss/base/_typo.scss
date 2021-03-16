@@ -9,7 +9,31 @@ Set the font family pairing
 +++++++++++++++++++++++++++
 ===========================
 */
-$use-map: fonts.$fira-sans-map;
+
+$available-font-maps:(
+  1: fonts.$playfair-map,
+  2: fonts.$lora-map,
+  3: fonts.$oxygen-map,
+  4: fonts.$arvo-map,
+  5: fonts.$work-sans-map,
+  6: fonts.$oswald-map,
+  7: fonts.$unica-map,
+  8: fonts.$vollkorn-map,
+  9: fonts.$dosis-map,
+  10: fonts.$estaban-map,
+  11: fonts.$poppins-map,
+  12: fonts.$fira-sans-map,
+);
+/* Select the font theme from the above map 1 - 12 */
+$font-theme: 1;
+$use-map: map-get($map: $available-font-maps, $key: $font-theme);
+$font-1: map-get($map: $use-map, $key: import1);
+$font-2: map-get($map: $use-map, $key: import2); 
+
+/* import only fonts that are used in the selected map */
+@import url($font-1);
+@import url($font-2);
+
 
 /* Set bg, highligh and font color from color map */
 $bg-clr: colors.$gray-9;
@@ -22,7 +46,6 @@ $b-overlay-clr: colors.$o-black-3;
 
 /* Default Margin for elemets margin bottom */
 $margin-b:0.8em;
-
 
 /* extracts the font weight value from the all font weights map in _fonts */
 @function setFontWeight ($font-w) {
@@ -43,6 +66,27 @@ $margin-b:0.8em;
   }
 };
 
+
+/* 3.2 Letter spacing modifier */
+@function letter-spacing (){
+  @if(map-get($map: $use-map, $key: heading-ls) == null ){
+    @return 50; 
+  }@else{
+    @return map-get($map: $use-map, $key: heading-ls);
+  }
+};
+
+$ls: letter-spacing(); 
+/* 3.2.1 Letter Spacing -map */
+$heading-ls:(
+  h1: 2.5em   / $ls,
+  h2: 2.2em   / $ls,
+  h3: 1.85em  / $ls,
+  h4: 1.60em  / $ls,
+  h5: 1.35em  / $ls,
+  h6: 1.15em  / $ls,
+);
+
 /* Set a font pairing map from fonts on the body */
 body {
   font-family: map-get($map: $use-map, $key: body);
@@ -61,7 +105,7 @@ body {
     font-style: map-get($map: $use-map, $key: #{h-s});
     color:$h-font-clr;
     font-size: map-get($map: fonts.$heading-size, $key: $heading );
-    letter-spacing: map-get($map: fonts.$heading-ls, $key: $heading );
+    letter-spacing: map-get($map: $heading-ls, $key: #{$heading} );
   }
 };
 

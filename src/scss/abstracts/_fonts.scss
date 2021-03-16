@@ -1,4 +1,6 @@
-@use 'font-import';
+@use 'font-import' as fi;
+
+
 
 /* Map variables */
 $font-style: normal!default;
@@ -43,8 +45,8 @@ $font-map:(
 ===========================
 3 Font Sizes
 3.1 Heading Font Sizes
-3.2 Headings Letter Spacing
-3.2.1 Letter Spacing modifier
+3.2 Letter spacing modifier
+3.2.1 Letter Spacing map 
 ===========================
 */
 
@@ -54,7 +56,10 @@ $playfair-display: 'Playfair Display', serif;
 $raleway: 'Raleway', sans-serif;
 
 $playfair-map:(
+  import1: fi.$playfair-display,
+  import2: fi.$raleway,
   heading: $playfair-display,
+  heading-ls: 200,
   h-w: 'regular',
   h-s: $font-style,
   body:$raleway,
@@ -67,7 +72,10 @@ $roboto: 'Roboto', sans-serif;
 $lora: 'Lora', serif;
 
 $lora-map:(
+  import1: fi.$roboto,
+  import2: fi.$lora,
   heading: $roboto,
+  heading-ls: 350,
   h-w: 'bold',
   h-s: $font-style,
   body:$lora,
@@ -80,7 +88,10 @@ $oxygen: 'Oxygen', sans-serif;
 $noto-serif: 'Noto Serif', serif;
 
 $oxygen-map:(
+  import1: fi.$oxygen,
+  import2: fi.$noto-serif,
   heading: $oxygen,
+  heading-ls: 1000,
   h-w: 'light',
   h-s: $font-style,
   body:$noto-serif,
@@ -93,7 +104,10 @@ $arvo: 'Arvo', serif;
 $lato: 'Lato', sans-serif;
 
 $arvo-map:(
+  import1: fi.$arvo,
+  import2: fi.$lato,
   heading: $arvo,
+  heading-ls: 350,
   h-w: 'regular',
   h-s: $font-style,
   body:$lato,
@@ -106,7 +120,10 @@ $work-sans:'Work Sans', sans-serif;
 $open-sans:'Open Sans', sans-serif;
 
 $work-sans-map:(
+  import1: fi.$work-sans,
+  import2: fi.$open-sans,
   heading: $work-sans,
+  heading-ls: 1000,
   h-w: 'light',
   h-s: $font-style,
   body:$open-sans,
@@ -119,7 +136,10 @@ $oswald:'Oswald', sans-serif;
 $quattrocento: 'Quattrocento', serif;
 
 $oswald-map:(
+  import1: fi.$oswald,
+  import2: fi.$quattrocento,
   heading: $oswald,
+  heading-ls: 200,
   h-w: 'regular',
   h-s: $font-style,
   body: $quattrocento,
@@ -132,7 +152,10 @@ $unica-one:'Unica One', cursive;
 $crimson-text: 'Crimson Text', serif;
 
 $unica-map:(
+  import1: fi.$unica-one,
+  import2: fi.$crimson-text,
   heading: $unica-one,
+  heading-ls: 450,
   h-w: 'regular',
   h-s: $font-style,
   body:$crimson-text,
@@ -145,7 +168,10 @@ $vollkorn: 'Vollkorn', serif;
 // $vollkorn-raleway: $raleway;
 
 $vollkorn-map:(
+  import1: fi.$vollkorn,
+  import2: fi.$raleway,
   heading: $vollkorn,
+  heading-ls: 150,
   h-w: 'regular',
   h-s: italic,
   body:$raleway,
@@ -158,7 +184,10 @@ $dosis: 'Dosis', sans-serif;
 $tittilium: 'Titillium Web', sans-serif;
 
 $dosis-map:(
+  import1: fi.$dosis,
+  import2: fi.$tittilium,
   heading: $dosis,
+  heading-ls: 200,
   h-w: 'regular',
   h-s: $font-style,
   body:$tittilium,
@@ -171,7 +200,10 @@ $dosis-map:(
 $esteban: 'Esteban', serif;
 
 $estaban-map:(
+  import1: fi.$oswald,
+  import2: fi.$esteban,
   heading: $oswald,
+  heading-ls: 100,
   h-w: 'light',
   h-s: $font-style,
   body:$esteban,
@@ -184,7 +216,10 @@ $poppins: 'Poppins', sans-serif;
 $pt-serif: 'PT Serif', serif;
 
 $poppins-map:(
+  import1: fi.$poppins,
+  import2: fi.$pt-serif,
   heading: $poppins,
+  heading-ls: 80,
   h-w: 'light',
   h-s: $font-style,
   body:$pt-serif,
@@ -197,7 +232,10 @@ $fira-sans-condensed: 'Fira Sans Condensed', sans-serif;
 $taviraj: 'Taviraj', serif;
 
 $fira-sans-map:(
+  import1: fi.$fira-sans,
+  import2: fi.$taviraj,
   heading: $fira-sans-condensed,
+  heading-ls: 100,
   h-w: 'medium',
   h-s: $font-style,
   body:$taviraj,
@@ -281,14 +319,14 @@ $heading-size:(
 );
 
 
-/* 3.2 Headings Letter Spacing */
-
-$ls:50; /* 3.2.1 Letter Spacing modifier */
-$heading-ls:(
-  h1: 2.5em   / $ls,
-  h2: 2.2em   / $ls,
-  h3: 1.85em  / $ls,
-  h4: 1.60em  / $ls,
-  h5: 1.35em  / $ls,
-  h6: 1.15em  / $ls,
-);
+// /* 3.2 Letter spacing modifier */
+// $ls:100; 
+// /* 3.2.1 Letter Spacing -map */
+// $heading-ls:(
+//   h1: 2.5em   / $ls,
+//   h2: 2.2em   / $ls,
+//   h3: 1.85em  / $ls,
+//   h4: 1.60em  / $ls,
+//   h5: 1.35em  / $ls,
+//   h6: 1.15em  / $ls,
+// );
