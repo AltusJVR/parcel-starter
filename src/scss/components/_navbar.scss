@@ -3,33 +3,67 @@
 @use '../abstracts/colors';
 @use '../base/mixins' as mix;
 
+/* 
+===========================
+1 Navbar Component
+1.1 Navabr container Styles
+===========================
+2 Navbar Links container styles
+2.1 Navbar links styles
+2.1.1 Navbar links focus, hover and focus-visible styles
+===========================
+3 Toggle Navbar Opacity 
+*/
+
+/* 1 Navbar Component */
+/* 1.1 Navabr container Styles */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-around;
   border-bottom: 2px solid typo.$h-clr;
   height: 10vh;
-  position: relative;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+  background-color: typo.$bg-clr;
+  transition: background-color mix.$animation-time ease-in;
 }
 
+
+/* 2 Navbar Links container styles */
 .navbar__links {
   display: flex;
-  width: 50%;
+  width: 80%;
   align-items: center;
   justify-content: space-around;
 }
 
+
+/* 2.1 Navbar links styles */
 .navbar__links a {
   font-family: map-get($map: typo.$use-map, $key: heading );
   font-size: 1.5em;
   transition: transform ease-in;
   border-bottom: 2px solid transparent;
-  transition-property: transform, border;
+  transition: transform mix.$animation-time ease-in;
   @include mix.transition;
+
+ /* 2.1.1 Navbar links focus, hover and focus-visible styles */ 
   &:hover, &:focus, &:focus-visible {
     outline: none;
     transform: scale(1.2);
     border-bottom: 2px solid typo.$h-clr;
     transform-origin: center;
   }
+}
+
+/* 3 Toggle Navbar Opacity */
+.navbar.navOpacity {
+  background-color: transparent;
+  border-bottom: none;
 }

@@ -1,34 +1,68 @@
 @use '../base/typo';
 @use '../base/mixins' as mix;
-
+/* 
+Navbar layout for mobile  (max-width:678px)
+===========================
+1 Navbar spacing
+===========================
+2 Navbar Links container
+===========================
+3 Hover and focus style for mobile navlinks
+===========================
+4 Default style for burger lines container
+===========================
+5 Default style for burger lines
+5.1 Position for burrger lines
+5.2 Toggle burger menu and line position when toggle is active
+===========================
+7 Navlinks a animation
+===========================
+8 Animate navlinks fade in
+===========================
+*/
 
 @media(max-width:678px){
+/* 1 Navbar spacing */
+  .navbar {
+    justify-content: space-between;
+    padding: 0 1.5em;
+  }
 
-
+/* 2 Navbar Links container */
   .navbar__links {
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around; 
     position: absolute;
+    z-index: 25;
     top: 10vh;
-    right: 0;
-    transform: translateX(100%);
+    right: -1px;
+    transform: scaleX(0);
     height: 90vh;
+    width: 100%;
     border-left: 2px solid typo.$h-clr;
     transition: transform ease-in mix.$animation-time;
+    background-color: typo.$overlay-clr;
+
+/* Fade out to the left */
+    transform-origin: left;
     a {
       width: 100%;
       text-align: center;
       border: none;
+      animation-direction: normal;
+      transform: translateX(100%);
+      opacity: 0;
+
+      /* 3 Hover and focus style for mobile navlinks */
       &:hover, &:focus, &:focus-visible {
         transform: none;
         border: none;
       }
     }
-
-
   }
+
+/* 4 Default style for burger lines container */
   .burger {
-    // outline: 1px solid #fff;
     width: 40px;
     height: 40px;
     background-color: transparent;
@@ -40,6 +74,7 @@
     position: relative;
   }
 
+/* 5 Default style for burger lines */
   .line{
     height: 2px;
     width: 100%;
@@ -51,7 +86,7 @@
     transform-origin: center,
     
   }
-
+/* 5.1 Position for burrger lines */
   .line-1{
     position: absolute;
     top: 20%;
@@ -60,40 +95,40 @@
     position: absolute;
     bottom: 20%;
   }
-
+/* 5.2 Toggle burger menu and line position when toggle is active*/
   .toggle {
   align-items: center;
   justify-content: center;
+
   .line{
-    top: 50%;
-    bottom: 50%;
+      top: 50%;
+      bottom: 50%;
+    }
   }
-  }
 
-.toggle .line-1{
-  transform: rotate(-45deg);  
-}
-.toggle .line-2{
-  opacity: 0;
-}
-.toggle .line-3{
-  transform: rotate(45deg) ;
-}
+  /* 6 Animate burger lines */
+.toggle .line-1{transform: rotate(-135deg);}
+.toggle .line-2{opacity: 0;}
+.toggle .line-3{transform: rotate(135deg);}
 
-
+/* 7 Navlinks a animation */
 @keyframes navLinkFade{
   from{
     opacity:0;
-    transform:
-    translateX(100%)}
+    transform: translateX(100%);
+  }
   to{
     opacity:1;
-    transform:translateX(0)
+    transform:translateX(0);
     }
   }
+
+  /* 8 Animate navlinks fade in */
   .nav-active{
+    transform: scaleX(1);
+    /* Fade in from the right */
     transform-origin: right;
-    transform: translateX(0);
     right: 0;
+    overflow-x: hidden;
   }
 }

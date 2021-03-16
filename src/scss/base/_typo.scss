@@ -11,10 +11,18 @@ Set the font family pairing
 */
 $use-map: fonts.$fira-sans-map;
 
-/* Set bg, highligh and font clr from color map */
-$bg-clr:map-get($map: colors.$gray-clr-map, $key: 30);
-$h-clr:map-get($map: colors.$blue-clr-map, $key: 50);
-$font-clr: map-get($map: colors.$gray-clr-map, $key: 80);
+/* Set bg, highligh and font color from color map */
+$bg-clr: colors.$gray-9;
+$h-clr: colors.$blue-5;
+$font-clr: colors.$gray-1;
+$h-font-clr: colors.$blue-5;
+$overlay-clr: colors.$o-blue-6;
+$w-overlay-clr: colors.$o-white-3;
+$b-overlay-clr: colors.$o-black-3;
+
+/* Default Margin for elemets margin bottom */
+$margin-b:0.8em;
+
 
 /* extracts the font weight value from the all font weights map in _fonts */
 @function setFontWeight ($font-w) {
@@ -50,15 +58,12 @@ body {
   #{$heading} {
     font-family: map-get($map: $use-map, $key: heading);
     font-weight: checkMapFontWeight($use-map, h-w );
-    font-style: map-get($map: $use-map, $key: #{h-s} );
+    font-style: map-get($map: $use-map, $key: #{h-s});
+    color:$h-font-clr;
+    font-size: map-get($map: fonts.$heading-size, $key: $heading );
+    letter-spacing: map-get($map: fonts.$heading-ls, $key: $heading );
   }
 };
-
-@each $heading in fonts.$heading {
-  #{$heading}{
-    font-size: map-get($map: fonts.$heading-size, $key: $heading );
-  }
-}
 
 a {
   color: inherit;

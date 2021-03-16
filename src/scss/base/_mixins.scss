@@ -1,3 +1,16 @@
+/* Mixins and transitions */
+/* 
+===========================
+1. Transition and animation timing 
+1.1 Transition and animation timing var
+1.2 Transition mixin for timing
+===========================
+2 Animation
+2.1 Animation mixin for timing
+===========================
+*/
+
+/* 1. Transition and animation timing  */
 $transition-map:(
   fast: 150ms,
   m-fast: 200ms,
@@ -5,12 +18,18 @@ $transition-map:(
   medium-s: 300ms,
   slow: 350ms,
 );
-
+/* 1.1 Transition and animation timing var (To match all transition and animation timing) */
 $animation-time: map-get($map: $transition-map, $key: slow );
-
+/* 1.2 Transition mixin for timing */
 @mixin transition {
   transition: map-get($map: $transition-map, $key: m-fast );
   transition-timing-function: ease-in;
 }
 
+/* 2 Animation */
+/* 2.1 Animation mixin for timing */
+@mixin animationMix {
+  animation-duration: $animation-time;
+  animation-timing-function: ease-in;
+}
 

@@ -1,0 +1,61 @@
+@use '../base/typo';
+
+.section {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 2em; 
+  margin-bottom: typo.$margin-b;
+}
+
+.section__hero {
+  height: 90vh;
+  position: relative;
+  z-index: 10;
+  justify-content: center;
+  h1 {
+    font-size: 4em;
+  }
+  p{
+    font-size: 1.2em;
+  }
+    /* Pseudo Elemets to help with text contrast */
+  &::before {
+    content: '';
+    background-image:url(../img/Valley-View-X3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -2;
+  }
+
+  /* After element between before and container to help with text contrast */
+
+  &::after{
+    background-color: typo.$b-overlay-clr;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+}
+
+.section__1 {
+  height: 100%;
+  h2{
+    margin-bottom: typo.$margin-b;
+  }
+  p {
+    margin-bottom: typo.$margin-b;
+  }
+}

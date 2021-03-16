@@ -1,11 +1,15 @@
+/* Resets and typography
+========================*/
 @use 'base/reset';
 @use 'base/typo';
-@use 'base/mixins' as mixins;
-@use 'abstracts/colors';
-@use 'layout/container';
+
+
+/* Components
+========================*/
 @use 'components/navbar';
 
 
-body {
-  overflow-x: hidden;
-}
+/* Layout
+========================*/
+@use 'layout/container';
+@use 'layout/index'; 
