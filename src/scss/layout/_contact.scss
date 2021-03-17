@@ -1,5 +1,6 @@
 @use '../base/mixins' as mix;
 @use '../base/typo';
+@use '../components/buttons';
 
 .section__contact {
   margin-top: calc(10vh + 5vh);
@@ -21,6 +22,20 @@
 input {
   padding:.5em 1em;
   border-radius: 5px;
+  position: relative;
+  border: 5px solid transparent;
+  transition: transform mix.$animation-time ease-in;
+  transform-origin: top;
+
+  &:hover, &:focus, &:focus-visible {
+    transform: scaleY(1.2);
+    transform-origin: top;
+    outline: none;
+  }
+}
+
+input::placeholder{
+  font-family: map-get($map: typo.$use-map, $key: heading);
 }
 
 button {
@@ -28,18 +43,7 @@ button {
   border-radius: 5px;
   padding: 0.5em 1em;
   width: 50%;
-  transition: 
-  color mix.$animation-time ease-in,
-  transform mix.$animation-time ease-in,
-  background-color mix.$animation-time ease-in;
-  cursor: pointer;
-  &:hover, &:focus, &:focus-visible {
-    outline: none;
-    transform: scale(1.1);
-    transform-origin: center;
-    background-color: typo.$bg-clr;
-    color: typo.$font-clr;
-  }
+
 }
 
 input + label   {

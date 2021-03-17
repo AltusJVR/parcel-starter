@@ -1,0 +1,22 @@
+@use '../base/typo';
+@use '../base/mixins' as mix;
+
+.btn {
+  font-family: map-get($map: typo.$use-map, $key: heading);
+  font-size: 1.5em;
+  background-color: typo.$bg-clr;
+  color: typo.$font-clr;
+  transition: 
+  color mix.$animation-time ease-in,
+  transform mix.$animation-time ease-in,
+  background-color mix.$animation-time ease-in;
+
+  cursor: pointer;
+  &:hover, &:focus, &:focus-visible {
+    outline: none;
+    transform: scale(1.1);
+    transform-origin: center;
+    background-color: typo.$font-clr;
+    color: typo.$bg-clr;
+  }
+}
