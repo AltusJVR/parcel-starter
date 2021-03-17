@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Main css -->
+    <link rel="stylesheet" href="./scss/main.scss">
+    <!-- Mobile css -->
+    <link rel="stylesheet" href="./scss/layout/mobile.scss" media="screen and (max-width:678px)">
+    <title>Contact Page title goes here!!!!</title>
+  </head>
+
+  <body data-pagename="contact">
+    <div class="container">
+      <header>
+        <nav class="navbar navOpacity">
+          <div class="navbar__logo">
+            <h1>Logo</h1>
+          </div>
+          <div class="navbar__links ">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Products </a>
+          </div>
+          <div class="burger">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"> </div>
+          </div>
+        </nav>
+      </header>
+      <section class="section__contact">
+        <h1>Contact us</h1>
+        <form name="contact" action="POST" class="section__contact-form" data-netlify="true">
+          <label for="email">Email: </label>
+          <input type="email" required name="email" id="email">
+          <label for="name">Name: </label>
+          <input type="text" name="name" id="name">
+          <label for="message">Message: </label>
+          <input type="text" required name="message" id="message" placeholder="Please type your message here.">
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="#">Github</a>
+          <a href="#">Linkedin</a>
+          <a href="#">Instagram</a>
+        </div>
+        <div class="footer__copyright">
+          <p>Copyright Altus Janse Van Rensburg, 2020 &copy;</p>
+        </div>
+      </footer>
+
+      <!-- Container Div -->
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
