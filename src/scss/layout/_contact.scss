@@ -1,9 +1,13 @@
+@use '../base/mixins' as mix;
+@use '../base/typo';
+
 .section__contact {
   margin-top: calc(10vh + 5vh);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: calc(10vh);
 }
 
 .section__contact-form {
@@ -12,6 +16,30 @@
   width: 50%;
   height: 100%;
   justify-content: space-between;
+}
+
+input {
+  padding:.5em 1em;
+  border-radius: 5px;
+}
+
+button {
+  align-self: center;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  width: 50%;
+  transition: 
+  color mix.$animation-time ease-in,
+  transform mix.$animation-time ease-in,
+  background-color mix.$animation-time ease-in;
+  cursor: pointer;
+  &:hover, &:focus, &:focus-visible {
+    outline: none;
+    transform: scale(1.1);
+    transform-origin: center;
+    background-color: typo.$bg-clr;
+    color: typo.$font-clr;
+  }
 }
 
 input + label   {
