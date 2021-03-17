@@ -53,8 +53,7 @@
   font-size: 1.5em;
   transition: transform ease-in;
   border-bottom: 2px solid transparent;
-  transition: transform mix.$animation-time ease-in;
-  @include mix.transition;
+  @include mix.transition(transform);
 
  /* 2.1.1 Navbar links focus, hover and focus-visible styles */ 
   &:hover, &:focus, &:focus-visible {

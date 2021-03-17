@@ -21,7 +21,8 @@ $transition-map:(
 /* 1.1 Transition and animation timing var (To match all transition and animation timing) */
 $animation-time: map-get($map: $transition-map, $key: slow );
 /* 1.2 Transition mixin for timing */
-@mixin transition {
+@mixin transition ($property: transform){
+  transition-property: $property;
   transition: map-get($map: $transition-map, $key: m-fast );
   transition-timing-function: ease-in;
 }

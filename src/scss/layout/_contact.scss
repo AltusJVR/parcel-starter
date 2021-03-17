@@ -26,18 +26,31 @@ input {
   border: 5px solid transparent;
   transition: transform mix.$animation-time ease-in;
   transform-origin: top;
-  background-color: transparent;
   color: typo.$font-clr;
+  position: relative;
+  color: typo.$bg-clr;
+  
+  &::after{
+    content: 'Hello';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+  }
 
   &:hover, &:focus, &:focus-visible {
-    transform: scaleY(1.2);
+    transform: scale(1.05);
     transform-origin: top;
     outline: none;
+    
   }
 }
 
 input::placeholder{
   font-family: map-get($map: typo.$use-map, $key: heading);
+  color: typo.$bg-clr;
 }
 
 button {
