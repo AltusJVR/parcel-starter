@@ -1,5 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/77d48bb7-8568-49db-9a3a-a61af69863f6/deploy-status)](https://app.netlify.com/sites/vigorous-hypatia-24a37c/deploys)
 
+[![Greetings](https://github.com/AltusJVR/parcel-starter/actions/workflows/greetings.yml/badge.svg)](https://github.com/AltusJVR/parcel-starter/actions/workflows/greetings.yml)
+
 Preview the starter template on [Netlify](https://parcel-scss-practice.netlify.app/). 
 
 ##### To use this package:
@@ -59,30 +61,34 @@ parcel src/**/*.html --no-cache --port 8080 --out-dir tmp --open
 ```
 ```
 src/
-  --main.scss
-  --img/
-    ---(empty)
-  --js/
-    --- main.js
-  --scss/
-    ---abstracts
-      ----_colors.scss
-      ----_font-imports.scss
-      ----_fonts.scss
-    ---base/
-      ----_mixins.scss
-      ----_reset.scss
-      ----_typo.scss
-    ---components/
-      ----_buttons.scss (curently empty)
-      ----footer.scss
-      ----_navbar.scss
-    ---layout/
-        ----_container.scss
-        ----_index.scss
-        ----mobile.scss (this is called in any .html file after the main.scss!)
-    ---pages
-      ----(empty)
+  |__"index.html"
+  |__"main.scss"
+  |
+  |__img/
+  |  |_(empty)
+  |
+  |__js/
+  |  |__ "main.js"
+  |
+  |__scss/
+    |__abstracts
+    |  |_ "_colors.scss"
+    |  |_ "_font-imports.scss"
+    |  |_ "_fonts.scss"
+    |__base/
+    |  |_ "_mixins.scss"
+    |  |_ "_reset.scss"
+    |  |_ "_typo.scss"
+    |__components/
+    |  |_ "_buttons.scss" (curently empty)
+    |  |_ "_footer.scss"
+    |  |_ "_navbar.scss"
+    |__layout/
+    |   |_ "_container.scss"
+    |   |_ "_index.scss"
+    |   |_ "mobile.scss" (this is called in any .html file after the main.scss!)
+    |__pages
+        |_ (empty)
 ```  
 - `.scss` files can be refrenced directly in `index.html` Parcel together with Dart-sass will complile this to css and reference the compiled css in the `tmp/` or `dist/` folder.
 - Other `.html` pages can also be created in the `src/` folder. 
