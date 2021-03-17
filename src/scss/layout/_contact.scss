@@ -68,3 +68,14 @@ input + button {
   margin-top: 2em;
 }
 
+.section__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  h3 {
+    margin-top: 2em;
+  }
+}
+
