@@ -2,7 +2,7 @@
   "name": "parcel-sass-starter",
   "version": "1.0.0",
   "description": "A parcel bundler starter template for scss, scss maps with font pairings and color maps",
-  "main": "dist/**/*.html",
+  "main": "dist/*.html",
   "scripts": {
     "dev": "parcel src/**/*.html --no-cache --port 8080 --dist-dir tmp",
     "deploy": "parcel build src/**/*.html --no-cache --no-content-hash --dist-dir dist"
