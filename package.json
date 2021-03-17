@@ -9,12 +9,12 @@
   },
   "author": "Altus Janse Van Rensburg <albertusbjvr@gmail.com>",
   "license": "MIT",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
     "cssnano": "^4.1.10",
     "sass": "^1.32.8",
     "parcel": "1.12.3"
   },
-  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AltusJVR/parcel-starter.git"
