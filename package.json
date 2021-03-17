@@ -1,6 +1,6 @@
 {
   "name": "parcel-sass-starter",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "- `npm run dev` - starts a dev server watches for file changes.\r -  `npm run build` - build and minifies files into the dist folder.",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,6 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
-    "netlify-cli": "^3.11.0",
     "parcel": "1.12.3"
   },
   "repository": {

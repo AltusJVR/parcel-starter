@@ -1,19 +1,139 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4e4ffefc-85fb-46d2-8838-3ce7fd7eac3e/deploy-status)](https://app.netlify.com/sites/parcel-scss-practice/deploys)
 
-##`npm i parcel-sass-starter`
-### Parcel starter template with sass
+Preview the starter template on [Netlify](https://parcel-scss-practice.netlify.app/). 
 
+##### To use this package:
+1. Fork from [Github](https://github.com/AltusJVR/parcel-starter).
+2. Clone onto your local machine. 
+### How to use
+- `npm run dev` - starts a dev server on http://localhost:8080/ and watches for file changes. 
+- All changes should happen in the `src/` folder. Changes in dist or temp will be **overwritten**!
+- If you want to automatically open the browser add the `--open` flag in `package.json` to the `dev` srcipt. 
+ - **Script should look like this:**
+```json
+parcel src/**/*.html --no-cache --port 8080 --out-dir tmp --open
+```
+- Please see the [Parcel](https://parceljs.org/) docs for more info on flags to use in the dev and build script.
 
-- `npm run dev` - starts a dev server on http://localhost:8080/ and watches for file changes.
--  `npm run build` - build and minifies files into the dist folder.
- 
+-  `npm run build` - build and minifies files into the dist folder, parcel will create this folder by itself, you do not need to create it before running the script.
+ ##### Dependencies
+ 1. Parcel (1.12.3).
+  - Problem with the latest version of Parcel. There was an error at build time using Dart-sass(^1.32.8). I didn't want to go back to node-sass. 
+ #### Dev Dependencies 
 
- #### This npm mudule uses the parcel and Dart-sass (^1.32.8). 
+ 1. cssnano (^4.1.10).
+ 2. Dart-sass (^1.32.8).
+
+----------
+##### Why I created this package
+- This package was created as a personal starter to practice Sass and setting up a task runner. I settled on Parcel as it was easy to set up and made sense for my workflow. 
+- I also wanted a way to swop out Google font pairings without replacing an entire `@import` url everytime I wanted to see a new font pairing, in my wn project. 
+- It's different to see a font pairing recommendation on a design website where everything is perfect. I wanted to see these fonts "in the wild".
+-  ###### Some Recommendations for font pairing suggestions: 
+1. [Fontpair](https://www.fontpair.co/)
+2. [Reliable](https://www.reliablepsd.com/ultimate-google-font-pairings/)
+3. [PageCloud](https://www.pagecloud.com/blog/best-google-fonts-pairings) One of my Favourites (Gives recommedations on weights and style).
+4. [Typewolf](https://www.typewolf.com/)
+5. [Fontjoy](https://fontjoy.com/) Another one f my favourites (lets you genrate 100's of pairings).
 
 ----------
 
-This package was created as a personal starter to practice Sass and setting up a task runner. I settled on Parcel as it was easy to set up and made sense for my workflow. 
+1. Project/Starter Layout. 
+2. Partials and Google Fonts.
+3. The `_typo.scss` file.
+3.1 The `_typo.scss` file variables variables. 
+3.2 The `_fonts.scss` file.
+4. The `_colors.scss`. file.
+5. Javascript. 
+### 1. Project layout
+- Outside the `src/` folder there is a `.sassrc` file (this was recommended in the parcel documentation. 
+- `.sassrc`:
+```json
+{
+  "includePaths": ["node_modules"],  
+}
+```
+```
+src/
+  --main.scss
+  --img/
+    ---(empty)
+  --js/
+    --- main.js
+  --scss/
+    ---abstracts
+      ----_colors.scss
+      ----_font-imports.scss
+      ----_fonts.scss
+    ---base/
+      ----_mixins.scss
+      ----_reset.scss
+      ----_typo.scss
+    ---components/
+      ----_buttons.scss (curently empty)
+      ----footer.scss
+      ----_navbar.scss
+    ---layout/
+        ----_container.scss
+        ----_index.scss
+        ----mobile.scss (this is called in any .html file after the main.scss!)
+    ---pages
+      ----(empty)
+```  
+- `.scss` files can be refrenced directly in `index.html` Parcel together with Dart-sass will complile this to css and reference the compiled css in the `tmp/` or `dist/` folder.
+- Other `.html` pages can also be created in the `src/` folder. 
 
-----------
+#### 2. Partials and Google Fonts 
+- In the project there is a `_fonts.scss` and `_colors.scss`. These contain the main `sass:maps` for this project starter. 
+- Google fonts are stored in `.scss` varibales in the `_font-import.scss` file. 
+- The google font pairs are only referenced when calling a font pair in the `_typo.scss` file. 
 
+#### 3. `_typo.scss` 
+- In `_typo.scss` a font pair can be selected, the font pair inlcudes a Heading font and a body font. 
+- Change the `var` in `$font-theme: (1-12);` to select a different font pairing.   
+- Each `heading`(h1,h2,h3,h4,h5,h6) css selector is generated with the following:
+```css
+h1 {
+  font-family: value;
+    font-weight: value;
+    font-style: value;
+    color:value;
+    font-size: value;
+    letter-spacing: value;
+}
 
+h2 {
+  ...
+} etc
+```
+- `letter-spacing` is determined by a letter-sppacing map and modifier related to each font (currently only headings). 
+
+##### 3.1 `_typo.scss` 
+- In the `_typo.scss` file, `background-color`, `font-color` and `heading-color` can be set. 
+- Colors are referenced from `_colors.scss`. 
+
+#### 3.2 '_fonts.scss'
+- Each font pair has an associated map with the following: 
+```css
+Example:
+$playfair-map:(
+  import1: fi.$playfair-display, /* - import from Goolge Fonts */
+  import2: fi.$raleway, /* - import from Goolge Fonts */
+  heading: $playfair-display, /* - Heading font family */
+  heading-ls: 200, /* - Heading letter spacing modifier */
+  h-w: 'regular', /* - Heading font weight (references the weight map in __fonts.scss) */
+  h-s: $font-style, /* - Heading font style(can be any other css font style) */
+  body:$raleway, /* - Body font family */
+  body-weight: 'regular', /* - Body font weight (references the weight map in __fonts.scss) */
+  b-s: $font-style, /* - Body font style(can be any other css font style) */
+  );
+```
+- Heading sizes are also mapped in the `_fonts.scss` file.
+
+#### 4. `_colors.scss`
+- This file contains color maps for white-gray, blue and overlay colors.
+- Each map has a set of varaiables assigned to it so that the variable can be referenced and not the map in other `.scss` modules. 
+- Please see the [Dart-sass](https://sass-lang.com/) documentation on how to use variables in other files. 
+
+#### 5. Javascript 
+- The only Javascript in this project is to toggle the navbar on small screensizes and animate the navbar opacity when scrolling. 
