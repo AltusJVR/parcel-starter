@@ -3,7 +3,6 @@ const navlinks = document.querySelectorAll('.navbar__links a');
 const navbar = document.querySelector('.navbar__links');
 const nav = document.querySelector('.navbar');
 
-
 /* Toggle mobile navbar fade in. Toggle Navbar burger animation */
 const toggle = () => {
   burger.addEventListener('click', () => {
