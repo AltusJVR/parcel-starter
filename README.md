@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4e4ffefc-85fb-46d2-8838-3ce7fd7eac3e/deploy-status)](https://app.netlify.com/sites/parcel-scss-practice/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/77d48bb7-8568-49db-9a3a-a61af69863f6/deploy-status)](https://app.netlify.com/sites/vigorous-hypatia-24a37c/deploys)
 
 Preview the starter template on [Netlify](https://parcel-scss-practice.netlify.app/). 
 

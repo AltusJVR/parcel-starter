@@ -1,6 +1,9 @@
 /node_modules
 /tmp
+/dist
 .env
 notes.md
 # Local Netlify folder
 .netlify
+
+.parcel-cache/

@@ -1,19 +1,16 @@
 {
   "name": "parcel-sass-starter",
   "version": "1.0.0",
-  "description": "- `npm run dev` - starts a dev server watches for file changes.\r -  `npm run build` - build and minifies files into the dist folder.",
+  "description": "A parcel bundler starter template for scss, scss maps with font pairings and color maps",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/**/*.html --no-cache --port 8080 --out-dir tmp",
-    "deploy": "parcel build src/**/*.html --no-cache --out-dir dist"
+    "dev": "parcel src/**/*.html --no-cache --port 8080 --dist-dir tmp",
+    "deploy": "parcel build src/**/*.html --no-cache --no-content-hash --dist-dir dist"
   },
   "author": "Altus Janse Van Rensburg <albertusbjvr@gmail.com>",
   "license": "MIT",
-  "devDependencies": {},
   "dependencies": {
-    "cssnano": "^4.1.10",
-    "sass": "^1.32.8",
-    "parcel": "1.12.3"
+    "parcel": "^2.0.0-beta.2"
   },
   "repository": {
     "type": "git",
@@ -30,5 +27,12 @@
   "bugs": {
     "url": "https://github.com/AltusJVR/parcel-starter/issues"
   },
-  "homepage": "https://github.com/AltusJVR/parcel-starter#readme"
+  "homepage": "https://github.com/AltusJVR/parcel-starter#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.2"
+  },
+  "browserslist": [
+    "> 0.2%",
+    "not dead"
+  ]
 }
