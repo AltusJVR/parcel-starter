@@ -26,6 +26,8 @@ input {
   border: 5px solid transparent;
   transition: transform mix.$animation-time ease-in;
   transform-origin: top;
+  background-color: transparent;
+  color: typo.$font-clr;
 
   &:hover, &:focus, &:focus-visible {
     transform: scaleY(1.2);
