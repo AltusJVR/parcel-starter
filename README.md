@@ -38,14 +38,18 @@ parcel src/**/*.html --no-cache --port 8080 --out-dir tmp --open
 
 ----------
 
-1. Project/Starter Layout. 
-2. Partials and Google Fonts.
-3. The `_typo.scss` file.
-3.1 The `_typo.scss` file variables variables. 
-3.2 The `_fonts.scss` file.
-4. The `_colors.scss`. file.
-5. Javascript. 
-### 1. Project layout
+1. [Project layout](#project-layout)
+2. [Partials and Google Fonts](#partials)
+3. [The typo file](#typo-scss)
+3.1 [Typo Variabes](#typo-variables)
+3.2 [The fonts file](#fonts-scss)
+4. [The Colors file](#colors-scss)
+5. [The javasript file](#javascript) 
+
+
+
+
+#Project layout
 - Outside the `src/` folder there is a `.sassrc` file (this was recommended in the parcel documentation. 
 - `.sassrc`:
 ```json
@@ -83,12 +87,12 @@ src/
 - `.scss` files can be refrenced directly in `index.html` Parcel together with Dart-sass will complile this to css and reference the compiled css in the `tmp/` or `dist/` folder.
 - Other `.html` pages can also be created in the `src/` folder. 
 
-#### 2. Partials and Google Fonts 
+#Partials 
 - In the project there is a `_fonts.scss` and `_colors.scss`. These contain the main `sass:maps` for this project starter. 
 - Google fonts are stored in `.scss` varibales in the `_font-import.scss` file. 
 - The google font pairs are only referenced when calling a font pair in the `_typo.scss` file. 
 
-#### 3. `_typo.scss` 
+#Typo scss 
 - In `_typo.scss` a font pair can be selected, the font pair inlcudes a Heading font and a body font. 
 - Change the `var` in `$font-theme: (1-12);` to select a different font pairing.   
 - Each `heading`(h1,h2,h3,h4,h5,h6) css selector is generated with the following:
@@ -108,11 +112,11 @@ h2 {
 ```
 - `letter-spacing` is determined by a letter-sppacing map and modifier related to each font (currently only headings). 
 
-##### 3.1 `_typo.scss` 
+#Typo variables 
 - In the `_typo.scss` file, `background-color`, `font-color` and `heading-color` can be set. 
 - Colors are referenced from `_colors.scss`. 
 
-#### 3.2 '_fonts.scss'
+#Fonts scss
 - Each font pair has an associated map with the following: 
 ```css
 Example:
@@ -130,10 +134,12 @@ $playfair-map:(
 ```
 - Heading sizes are also mapped in the `_fonts.scss` file.
 
-#### 4. `_colors.scss`
+#Colors-scss
 - This file contains color maps for white-gray, blue and overlay colors.
 - Each map has a set of varaiables assigned to it so that the variable can be referenced and not the map in other `.scss` modules. 
 - Please see the [Dart-sass](https://sass-lang.com/) documentation on how to use variables in other files. 
 
-#### 5. Javascript 
+#Javascript 
 - The only Javascript in this project is to toggle the navbar on small screensizes and animate the navbar opacity when scrolling. 
+
+----------

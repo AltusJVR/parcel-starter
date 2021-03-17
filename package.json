@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/**/*.html --no-cache --port 8080 --out-dir tmp",
-    "build": "parcel build src/**/*.html --no-cache --out-dir dist"
+    "deploy": "parcel build src/**/*.html --no-cache --out-dir dist"
   },
   "author": "Altus Janse Van Rensburg <albertusbjvr@gmail.com>",
   "license": "MIT",
