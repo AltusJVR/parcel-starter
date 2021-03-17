@@ -1,7 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/77d48bb7-8568-49db-9a3a-a61af69863f6/deploy-status)](https://app.netlify.com/sites/vigorous-hypatia-24a37c/deploys)
 
 [![Greetings](https://github.com/AltusJVR/parcel-starter/actions/workflows/greetings.yml/badge.svg)](https://github.com/AltusJVR/parcel-starter/actions/workflows/greetings.yml)
-[Repo Size)](gh-repo-size)
+[Repo Size)]('gh_repo_size')
 
 Preview the starter template on [Netlify](https://parcel-scss-practice.netlify.app/). 
 
