@@ -11,11 +11,16 @@ Color Maps and Variables
 3. Blue overlay color map
 3.1 Blue overlay color var
 ===================
-4. Black overlay color map
-4.1 Black overlay color var
+4. Green color map
+4.1 Green color var
+4.2 Green overlay color map
+4.3 Green overlay color var
 ===================
-5. White overlay color map
-5.1 White overlay color var
+5. Black overlay color map
+5.1 Black overlay color var
+===================
+6. White overlay color map
+6.1 White overlay color var
 ===================
 */
 
@@ -95,7 +100,60 @@ $o-blue-7:map-get($blue-overlay-clr-map, 7);
 $o-blue-8:map-get($blue-overlay-clr-map, 8);
 $o-blue-9:map-get($blue-overlay-clr-map, 9);
 
-/* 4. Black overlay color map */
+/* 4. Green color map */
+$green-clr-map:(
+  1: hsl(90, 50%, 85%),
+  2: hsl(90, 50%, 80%),
+  3: hsl(90, 50%, 75%),
+  4: hsl(90, 50%, 70%),
+  5: hsl(90, 50%, 65%),
+  6: hsl(90, 50%, 60%),
+  7: hsl(90, 50%, 55%),
+  8: hsl(90, 50%, 50%),
+  9: hsl(90, 50%, 45%),
+);
+
+
+/* 4.1 Green color var */
+$green-1:map-get($green-clr-map, 1);
+$green-2:map-get($green-clr-map, 2);
+$green-3:map-get($green-clr-map, 3);
+$green-4:map-get($green-clr-map, 4);
+$green-5:map-get($green-clr-map, 5);
+$green-6:map-get($green-clr-map, 6);
+$green-7:map-get($green-clr-map, 7);
+$green-8:map-get($green-clr-map, 8);
+$green-9:map-get($green-clr-map, 9);
+
+
+
+/* 4.2 Green overlay color map */
+
+$green-overlay-clr-map:(
+  1:  rgba(166, 210, 121, 0.1),
+  2:  rgba(166, 210, 121, 0.2),
+  3:  rgba(166, 210, 121, 0.3),
+  4:  rgba(166, 210, 121, 0.4),
+  5:  rgba(166, 210, 121, 0.5),
+  6:  rgba(166, 210, 121, 0.6),
+  7:  rgba(166, 210, 121, 0.7),
+  8:  rgba(166, 210, 121, 0.8),
+  9:  rgba(166, 210, 121, 0.9),
+);
+
+/* 4.3 Green overlay color var */
+
+$o-green-1:map-get($green-overlay-clr-map, 1);
+$o-green-2:map-get($green-overlay-clr-map, 2);
+$o-green-3:map-get($green-overlay-clr-map, 3);
+$o-green-4:map-get($green-overlay-clr-map, 4);
+$o-green-5:map-get($green-overlay-clr-map, 5);
+$o-green-6:map-get($green-overlay-clr-map, 6);
+$o-green-7:map-get($green-overlay-clr-map, 7);
+$o-green-8:map-get($green-overlay-clr-map, 8);
+$o-green-9:map-get($green-overlay-clr-map, 9);
+
+/* 5. Black overlay color map */
 $black-overlay-clr-map:(
   1: rgba(0,0,0,.1),
   2: rgba(0,0,0,.2),
@@ -104,14 +162,14 @@ $black-overlay-clr-map:(
   5: rgba(0,0,0,.5),
 );
 
-/* 4.1 Black overlay color var */
+/* 5.1 Black overlay color var */
 $o-black-1:map-get($black-overlay-clr-map, 1);
 $o-black-2:map-get($black-overlay-clr-map, 2);
 $o-black-3:map-get($black-overlay-clr-map, 3);
 $o-black-4:map-get($black-overlay-clr-map, 4);
 $o-black-5:map-get($black-overlay-clr-map, 5);
 
-/* 5. White overlay color map */
+/* 6. White overlay color map */
 $white-overlay-clr-map:(
   1: rgba(225,225,225,.1),
   2: rgba(225,225,225,.2),
@@ -120,7 +178,7 @@ $white-overlay-clr-map:(
   5: rgba(225,225,225,.5),
 );
 
-/* 5.1 White overlay color var */
+/* 6.1 White overlay color var */
 $o-white-1:map-get($white-overlay-clr-map, 1);
 $o-white-2:map-get($white-overlay-clr-map, 2);
 $o-white-3:map-get($white-overlay-clr-map, 3);

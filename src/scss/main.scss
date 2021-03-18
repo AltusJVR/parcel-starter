@@ -8,10 +8,12 @@
 ========================*/
 @use 'components/navbar';
 @use 'components/footer';
+@use 'components/buttons';
 
 
 /* Layout
 ========================*/
 @use 'layout/container';
-@use 'layout/index'; 
+@use 'layout/home';
+@use 'layout/about';
 // @use 'layout/contact'; 

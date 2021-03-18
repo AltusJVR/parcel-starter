@@ -9,7 +9,6 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: 0 2em; 
-  margin-bottom: typo.$margin-b;
 }
 
 .section__hero {
@@ -17,6 +16,10 @@
   position: relative;
   z-index: 10;
   justify-content: center;
+  // background-color: red;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 100%, 50% 75%, 25% 100%, 0 75%);
+  top: 0;
+  bottom: -50px;
   h1 {
     font-size: 4em;
   }
@@ -27,7 +30,7 @@
 
   &::before {
     content: '';
-    background-color: black;
+    background-image: url("url:/src/img/Hero.jpg?as=jpg&quality=70&width=1200");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -38,19 +41,21 @@
     bottom: 0;
     right: 0;
     z-index: -2;
+    clip-path: circle(70% at 0% 50%);
   }
 
   /* After element between before and container to help with text contrast */
 
   &::after{
-    background-color: typo.$b-overlay-clr;
+    background-color: typo.$section-overlay-clr;
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    bottom: 0;
+    left: 0; 
+    bottom: -200px;
     right: 0;
-    z-index: -1;
+    z-index: -1; 
+    
   }
 }
 
@@ -79,7 +84,7 @@
   /* Apply background image to before element helps to apply an overlay to the image so text is readable */
   &::before {
     content: '';
-    background-color: black;
+    background-image: url("url:/src/img/section-2.jpg?as=jpg&quality=70&width=1200");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -95,7 +100,7 @@
   /* After element between before and container to help with text contrast */
 
   &::after{
-    background-color: colors.$o-black-4;
+    background-color: typo.$section-overlay-clr;
     content: '';
     position: absolute;
     top: 0;
@@ -104,4 +109,9 @@
     right: 0;
     z-index: -1;
   }
+}
+
+.section__about {
+  margin-top: 10vh;
+  min-height: 80vh;
 }
