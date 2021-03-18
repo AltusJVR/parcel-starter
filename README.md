@@ -11,6 +11,7 @@ Preview the start er template on [Netlify](https://parcel-scss-practice.netlify.
 ##### To use this package:
 1. Fork from [Github](https://github.com/AltusJVR/parcel-starter).
 2. Clone onto your local machine. 
+3. If using as astarter for new projects, remeber to remove the git remote, using `git remote remove [git-remote-name]`.
 ### How to use
 - `npm run dev` - starts a dev server on http://localhost:8080/ and watches for file changes. 
 - All changes should happen in the `src/` folder. Changes in dist or temp will be **overwritten**!
@@ -23,13 +24,17 @@ parcel src/**/*.html --no-cache --port 8080 --out-dir tmp --open
 
 -  `npm run build` - build and minifies files into the dist folder, parcel will create this folder by itself, you do not need to create it before running the script.
  ##### Dependencies
- 1. Parcel (1.12.3).
-  - Problem with the latest version of Parcel. There was an error at build time using Dart-sass(^1.32.8). I didn't want to go back to node-sass. 
+ 1. Parcel ("^2.0.0-beta.2").
+  - Parcel website documentation is out of date. Please rfere to the npm repo for Parcel v2. [Parcel](https://v2.parceljs.org/) 
+  - Another issue I encountered was scss errors, Parcel does nt=ot auto restart after clearing the error. 
  #### Dev Dependencies 
 
- 1. cssnano (^4.1.10).
- 2. Dart-sass (^1.32.8).
-
+```json
+devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.2"
+  }
+```
+- devDependencies get installed automaitcally by Parcel. 
 ----------
 ##### Why I created this package
 - This package was created as a personal starter to practice Sass and setting up a task runner. I settled on Parcel as it was easy to set up and made sense for my workflow. 
@@ -76,23 +81,23 @@ src/
   |
   |__scss/
     |__abstracts
-    |  |_ "_colors.scss"
-    |  |_ "_font-imports.scss"
-    |  |_ "_fonts.scss"
+    |     |_ "_colors.scss"
+    |     |_ "_font-imports.scss"
+    |     |_ "_fonts.scss"
     |__base/
-    |  |_ "_mixins.scss"
-    |  |_ "_reset.scss"
-    |  |_ "_typo.scss"
+    |     |_ "_mixins.scss"
+    |     |_ "_reset.scss"
+    |     |_ "_typo.scss"
     |__components/
-    |  |_ "_buttons.scss" (curently empty)
-    |  |_ "_footer.scss"
-    |  |_ "_navbar.scss"
+    |     |_ "_buttons.scss" (curently empty)
+    |     |_ "_footer.scss"
+    |     |_ "_navbar.scss"
     |__layout/
-    |   |_ "_container.scss"
-    |   |_ "_index.scss"
-    |   |_ "mobile.scss" (this is called in any .html file after the main.scss!)
+    |     |_ "_container.scss"
+    |     |_ "_index.scss"
+    |     |_ "mobile.scss" (this is called in any .html file after the main.scss!)
     |__pages
-        |_ (empty)
+      |_ (empty)
 ```  
 - `.scss` files can be refrenced directly in `index.html` Parcel together with Dart-sass will complile this to css and reference the compiled css in the `tmp/` or `dist/` folder.
 - Other `.html` pages can also be created in the `src/` folder. 
