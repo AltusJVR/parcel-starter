@@ -2,8 +2,9 @@
 
 [![Greetings](https://github.com/AltusJVR/parcel-starter/actions/workflows/greetings.yml/badge.svg)](https://github.com/AltusJVR/parcel-starter/actions/workflows/greetings.yml)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AltusJVR/parcel-starter?color=Green&style=plastic)
+('gh_version,gh_license')
 
-Preview the starter template on [Netlify](https://parcel-scss-practice.netlify.app/). 
+Preview the start er template on [Netlify](https://parcel-scss-practice.netlify.app/). 
 
 ##### To use this package:
 1. Fork from [Github](https://github.com/AltusJVR/parcel-starter).
