@@ -109,7 +109,7 @@ Navbar layout for mobile  (max-width:678px)
 
   /* 6 Animate burger lines */
 .toggle .line-1{transform: rotate(-135deg);}
-.toggle .line-2{opacity: 0;}
+.toggle .line-2{opacity: 0; transform: rotate(90deg) scale(0);}
 .toggle .line-3{transform: rotate(135deg);}
 
 /* 7 Navlinks a animation */

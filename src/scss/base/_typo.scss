@@ -25,7 +25,7 @@ $available-font-maps:(
   12: fonts.$fira-sans-map,
 );
 /* Select the font theme from the above map 1 - 12 */
-$font-theme: 1;
+$font-theme: 12;
 $use-map: map-get($map: $available-font-maps, $key: $font-theme);
 $font-1: map-get($map: $use-map, $key: import1);
 $font-2: map-get($map: $use-map, $key: import2); 
