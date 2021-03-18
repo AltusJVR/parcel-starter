@@ -14,37 +14,30 @@
 .section__contact-form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
   height: 100%;
+  align-items: center;
   justify-content: space-between;
+
+
 }
 
 input {
   padding:.5em 1em;
   border-radius: 5px;
   position: relative;
-  border: 5px solid transparent;
   transition: transform mix.$animation-time ease-in;
   transform-origin: top;
   color: typo.$font-clr;
   position: relative;
   color: typo.$bg-clr;
-  
-  &::after{
-    content: 'Hello';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: red;
+  &:not([type="submit"]){
+    width: 80%;
   }
-
   &:hover, &:focus, &:focus-visible {
     transform: scale(1.05);
     transform-origin: top;
-    outline: none;
-    
+    outline: none; 
   }
 }
 
@@ -53,19 +46,23 @@ input::placeholder{
   color: typo.$bg-clr;
 }
 
+
+
 button {
   align-self: center;
   border-radius: 5px;
   padding: 0.5em 1em;
-  width: 50%;
-
+  width: auto;
 }
 
 input + label   {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 input + button {
-  margin-top: 2em;
+  margin-top: 1em;
+}
+label + input  {
+  margin-top: 1em;
 }
 
 .section__success {
@@ -79,3 +76,6 @@ input + button {
   }
 }
 
+.label {
+  font-size: 1.2em;
+}
