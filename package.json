@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A parcel bundler starter template for scss, scss maps with font pairings and color maps",
   "scripts": {
-    "dev": "parcel src/index.html --port 8080 --dist-dir tmp",
-    "deploy": "parcel build src/**/*.html --no-cache --dist-dir dist"
+    "dev": "parcel 'src/index.html' --port 8080 --dist-dir tmp",
+    "deploy": "parcel build 'src/**/index.html' --no-cache --dist-dir dist --no-content-hash"
   },
   "author": "Altus Janse Van Rensburg <albertusbjvr@gmail.com>",
   "license": "MIT",
