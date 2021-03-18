@@ -54,7 +54,7 @@ $margin-b:0.8em;
   }@else{
     @warn 'fontweight not found'
   }
-};
+}
 
 /* Check what font weight is specified in the font map and assigns a weight value from a font weight map in _fonts */
 @function checkMapFontWeight( $map, $target){
@@ -64,7 +64,7 @@ $margin-b:0.8em;
   }@if $w != null {
     @return setFontWeight($w);
   }
-};
+}
 
 
 /* 3.2 Letter spacing modifier */
@@ -74,7 +74,7 @@ $margin-b:0.8em;
   }@else{
     @return map-get($map: $use-map, $key: heading-ls);
   }
-};
+}
 
 $ls: letter-spacing(); 
 /* 3.2.1 Letter Spacing -map */
@@ -107,7 +107,7 @@ body {
     font-size: map-get($map: fonts.$heading-size, $key: $heading );
     letter-spacing: map-get($map: $heading-ls, $key: #{$heading} );
   }
-};
+}
 
 a {
   color: inherit;
