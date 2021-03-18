@@ -3,6 +3,8 @@
 [![Greetings](https://github.com/AltusJVR/parcel-starter/actions/workflows/greetings.yml/badge.svg)](https://github.com/AltusJVR/parcel-starter/actions/workflows/greetings.yml)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AltusJVR/parcel-starter?color=Green&style=plastic)
 
+[![CodeFactor](https://www.codefactor.io/repository/github/altusjvr/parcel-starter/badge)](https://www.codefactor.io/repository/github/altusjvr/parcel-starter)
+
 
 Preview the start er template on [Netlify](https://parcel-scss-practice.netlify.app/). 
 
