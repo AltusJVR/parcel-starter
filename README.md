@@ -39,7 +39,7 @@ parcel src/**/*.html --no-cache --port 8080 --out-dir tmp --open
 
 ```json
 devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-beta.2"
+    "@parcel/transformer-sass": "^2.0.0-nightly.850"
   }
 ```
 
