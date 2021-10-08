@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A parcel bundler starter template for scss, scss maps with font pairings and color maps",
   "scripts": {
-    "start": "parcel serve ./src/index.html --no-cache --dist-dir tmp",
+    "start": "parcel serve ./src/index.html --dist-dir tmp -p 8080",
     "deploy": "parcel build 'src/index.html' --no-cache --dist-dir dist --no-content-hash",
     "sass": "sass --watch --no-source-map --update src/scss/main.scss:css/main.css"
   },
