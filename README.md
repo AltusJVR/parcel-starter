@@ -1,14 +1,10 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/77d48bb7-8568-49db-9a3a-a61af69863f6/deploy-status)](https://app.netlify.com/sites/vigorous-hypatia-24a37c/deploys)
 
-[![Greetings](https://github.com/AltusJVR/parcel-starter/actions/workflows/greetings.yml/badge.svg)](https://github.com/AltusJVR/parcel-starter/actions/workflows/greetings.yml)
+[![Portfolio](https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://altus-portfolio.netlify.app/) [![Send me an email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](albertusbjvr@gmail.com)
 
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AltusJVR/parcel-starter?color=Green&style=plastic)
+[![Greetings](https://github.com/AltusJVR/parcel-starter/actions/workflows/greetings.yml/badge.svg)](https://github.com/AltusJVR/parcel-starter/actions/workflows/greetings.yml) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AltusJVR/parcel-starter?color=Green&style=plastic) [![CodeFactor](https://www.codefactor.io/repository/github/altusjvr/parcel-starter/badge)](https://www.codefactor.io/repository/github/altusjvr/parcel-starter)
 
-[![CodeFactor](https://www.codefactor.io/repository/github/altusjvr/parcel-starter/badge)](https://www.codefactor.io/repository/github/altusjvr/parcel-starter)
-
-![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-
-Preview the start er template on [Netlify](https://parcel-scss-practice.netlify.app/).
+Preview the starter template on [Netlify](https://parcel-scss-practice.netlify.app/).
 
 ##### To use this package:
 
