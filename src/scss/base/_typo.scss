@@ -1,6 +1,6 @@
-@use '../abstracts/fonts';
-@use '../abstracts/colors';
-@use 'sass:map';
+@use "../abstracts/fonts";
+@use "../abstracts/colors";
+@use "sass:map";
 
 /* 
 Set the font family pairing 
@@ -10,7 +10,7 @@ Set the font family pairing
 ===========================
 */
 
-$available-font-maps:(
+$available-font-maps: (
   1: fonts.$playfair-map,
   2: fonts.$lora-map,
   3: fonts.$oxygen-map,
@@ -26,16 +26,24 @@ $available-font-maps:(
 );
 /* Select the font theme from the above map 1 - 12 */
 $font-theme: 12;
-$use-map: map-get($map: $available-font-maps, $key: $font-theme);
-$font-1: map-get($map: $use-map, $key: import1);
-$font-2: map-get($map: $use-map, $key: import2); 
+$use-map: map-get(
+  $map: $available-font-maps,
+  $key: $font-theme,
+);
+$font-1: map-get(
+  $map: $use-map,
+  $key: import1,
+);
+$font-2: map-get(
+  $map: $use-map,
+  $key: import2,
+);
 
 /* import only fonts that are used in the selected map */
 @import url($font-1);
 @import url($font-2);
 
-
-/* Set bg, highligh and font color from color map */
+/* Set bg, highlight and font color from color map */
 $bg-clr: colors.$gray-9;
 $h-clr: colors.$blue-6;
 $font-clr: colors.$gray-1;
@@ -45,68 +53,71 @@ $w-overlay-clr: colors.$o-white-1;
 $b-overlay-clr: colors.$o-black-3;
 $section-overlay-clr: colors.$o-blue-1;
 
-/* Default Margin for elemets margin bottom */
-$margin-b:0.8em;
+/* Default Margin for elements margin bottom */
+$margin-b: 0.8em;
 
 /* extracts the font weight value from the all font weights map in _fonts */
-@function setFontWeight ($font-w) {
+@function setFontWeight($font-w) {
   @if $font-w != null {
     @return map-get($map: fonts.$all-weights, $key: $font-w);
-  }@else{
-    @warn 'fontweight not found'
+  } @else {
+    @warn 'fontweight not found';
   }
 }
 
 /* Check what font weight is specified in the font map and assigns a weight value from a font weight map in _fonts */
-@function checkMapFontWeight( $map, $target){
-  $w:map-get($map: $map, $key: $target );
+@function checkMapFontWeight($map, $target) {
+  $w: map-get(
+    $map: $map,
+    $key: $target,
+  );
   @if $w == null {
-    @return 'something went wrong';
-  }@if $w != null {
+    @return "something went wrong";
+  }
+  @if $w != null {
     @return setFontWeight($w);
   }
 }
 
-
 /* 3.2 Letter spacing modifier */
-@function letter-spacing (){
-  @if(map-get($map: $use-map, $key: heading-ls) == null ){
-    @return 50; 
-  }@else{
+@function letter-spacing() {
+  @if (map-get($map: $use-map, $key: heading-ls) == null) {
+    @return 50;
+  } @else {
     @return map-get($map: $use-map, $key: heading-ls);
   }
 }
 
-$ls: letter-spacing(); 
+$ls: letter-spacing();
 /* 3.2.1 Letter Spacing -map */
-$heading-ls:(
-  h1: 2.5em   / $ls,
-  h2: 2.2em   / $ls,
-  h3: 1.85em  / $ls,
-  h4: 1.60em  / $ls, 
-  h5: 1.35em  / $ls,
-  h6: 1.15em  / $ls,
+$heading-ls: (
+  h1: div(2.5em, $ls),
+  h2: div(2.2em, $ls),
+  h3: div(1.85em, $ls),
+  h4: div(1.6em, $ls),
+  h5: div(1.35em, $ls),
+  h6: div(1.15em, $ls),
 );
 
 /* Set a font pairing map from fonts on the body */
 body {
   font-family: map-get($map: $use-map, $key: body);
   font-weight: checkMapFontWeight($use-map, body-weight);
-  font-style: map-get($map: $use-map, $key: #{b-s} );
+  font-style: map-get($map: $use-map, $key: #{b-s});
   background-color: $bg-clr;
   color: $font-clr;
 }
 
 /* set a font for all headings from a font pairing map */
 @each $heading in fonts.$heading {
-  /* #{$heading} destrcutures $Heading map from _fonts */
+  /* #{$heading} de structures $Heading map from _fonts */
   #{$heading} {
     font-family: map-get($map: $use-map, $key: heading);
-    font-weight: checkMapFontWeight($use-map, h-w );
+    font-weight: checkMapFontWeight($use-map, h-w);
     font-style: map-get($map: $use-map, $key: #{h-s});
-    color:$h-font-clr;
-    font-size: map-get($map: fonts.$heading-size, $key: $heading );
-    letter-spacing: map-get($map: $heading-ls, $key: #{$heading} );
+    color: $h-font-clr;
+    font-size: map-get($map: fonts.$heading-size, $key: $heading);
+    letter-spacing: map-get($map: $heading-ls, $key: #{$heading});
   }
 }
 

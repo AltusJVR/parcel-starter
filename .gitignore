@@ -7,3 +7,5 @@ notes.md
 .netlify
 
 .parcel-cache/
+css/
+.vscode/

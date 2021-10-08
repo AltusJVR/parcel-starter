@@ -4,12 +4,13 @@
   "description": "A parcel bundler starter template for scss, scss maps with font pairings and color maps",
   "scripts": {
     "start": "parcel serve ./src/index.html --no-cache --dist-dir tmp",
-    "deploy": "parcel build 'src/index.html' --no-cache --dist-dir dist --no-content-hash"
+    "deploy": "parcel build 'src/index.html' --no-cache --dist-dir dist --no-content-hash",
+    "sass": "sass --watch --no-source-map --update src/scss/main.scss:css/main.css"
   },
   "author": "Altus Janse Van Rensburg <albertusbjvr@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "parcel": "^2.0.0-nightly.627"
+    "parcel": "^2.0.0-nightly.850"
   },
   "repository": {
     "type": "git",
@@ -28,9 +29,8 @@
   },
   "homepage": "https://github.com/AltusJVR/parcel-starter#readme",
   "devDependencies": {
-    "@parcel/transformer-image": "^2.0.0-nightly.2251",
-    "@parcel/transformer-sass": "^2.0.0-nightly.629",
-    "sharp": "^0.27.2"
+    "@parcel/transformer-sass": "^2.0.0-nightly.852",
+    "sharp": "^0.29.1"
   },
   "browserslist": [
     "> 0.2%",
